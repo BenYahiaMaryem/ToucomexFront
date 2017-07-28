@@ -1,0 +1,18 @@
+<div class="ui top attached demo menu">
+    <a class="item" (click)="sidebar.toggle()">
+        <i class="sidebar icon"></i> Menu
+    </a>
+</div>
+<sui-sidebar-container class="ui bottom attached segment">
+    <sui-sidebar class="inverted vertical" #sidebar>
+        <a class="item" routerLink='admin-books'> Books</a>
+        <a class="item" routerLink='admin-categories'> Categories</a>
+        <a class="item" routerLink='admin-commands'> Commands</a>
+        <a class="item" routerLink='admin-carts'> Carts</a>
+    </sui-sidebar>
+    <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+        <div class="ui basic segment">
+          <main-page></main-page>  
+        </div>
+    </sui-sidebar-sibling>
+</sui-sidebar-container>

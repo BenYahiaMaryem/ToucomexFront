@@ -1,0 +1,57 @@
+<div class="ui form">
+  <div class="fields">
+    <form [formGroup]="productForm" novalidate>
+      <div class="ui three column stackable grid">
+        <div class="sixteen wide column">
+          <div class="field">
+            <label>product Name</label>
+            <input type="text" placeholder="product Name" formControlName="name">
+          </div>
+        </div>
+        <div class="sixteen wide column">
+          <div class="field">
+            <label>product Description</label>
+            <input type="text" placeholder="product Description" formControlName="description">
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label>product old price</label>
+            <input type="text" placeholder="product old price" formControlName="oldPrice">
+          </div>
+        </div>
+
+
+
+
+        <div class="column">
+          <div class="field">
+            <label>product recent price</label>
+            <input type="text" placeholder="product recent price" formControlName="recentPrice">
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label>Total products added</label>
+            <input type="text" placeholder="total products added" formControlName="inMarket">
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label>Available products</label>
+            <input type="text" placeholder="available products" formControlName="availableproducts">
+          </div>
+        </div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column">
+          <div class="ui button" (click)="updateproduct(product)" tabindex="0">Update</div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

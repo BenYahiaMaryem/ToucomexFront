@@ -1,0 +1,66 @@
+<sui-accordion class="styled fluid">
+  <sui-accordion-panel>
+    <div title>
+      <div class="ui sixteen column stackable grid">
+        <div class="fourteen wide column">
+          <i class="dropdown icon"></i>{{product.name}}
+        </div>
+        <div class="one wide column" (click)="deleteproduct(product)">
+          <i class="trash outline icon"></i>
+        </div>
+        <div class="one wide column" (click)="updateproduct(product)">
+          <i class="edit icon"></i>
+        </div>
+      </div>
+
+      <!--<div class="three column row">
+    <div class="column">
+      <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+      <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+      <div class="ui segment">Content</div>
+    </div>
+  </div>
+  <div class="ten wide column">
+    <div class="ui segment">Content</div>
+  </div>
+  <div class="six wide column">
+    <div class="ui segment">Content</div>
+  </div>-->
+    </div>
+    <div content>
+      <div *ngIf='!updateForm' class="ui three column stackable grid">
+        <div class="sixteen wide column">
+          name: {{product.name}}
+        </div>
+        <div class="sixteen wide column">
+          description: {{product.description}}
+        </div>
+
+        <div class="column">
+          recent price: {{product.recentPrice}}
+        </div>
+        <div class="column">
+          old price: {{product.oldPrice}}
+        </div>
+        <div class="column">
+          total products added: {{product.inMarket}}
+        </div>
+        <div class="column">
+          available products: {{product.availableproducts}}
+        </div>
+        
+
+      </div>
+      <div *ngIf='updateForm' class="ui three column stackable grid">
+        <div class="sixteen wide column">
+          <product-pusher [product]="product" (updated)="updated($event)"></product-pusher>
+        </div>
+      </div>
+      
+    </div>
+  </sui-accordion-panel>
+</sui-accordion>

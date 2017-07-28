@@ -1,0 +1,43 @@
+<!--<div class="ui raised very padded text container piled segments">
+-->
+<!--<div class="ui segment">
+-->
+<!--<div class="ui left rail">
+    <div class="ui segment">-->
+<form class="ui form" #f="ngForm" novalidate>
+  <h4 class="ui dividing header">Research</h4>
+  <div class="field">
+    <label>product Name</label>
+    <div class="field">
+      <input type="text" name="name" (keyup)="getproductAdvancedSearch(product)" [(ngModel)]=product.name placeholder="product Name">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label>Category</label>
+    <select name="category" [(ngModel)]="product.category">
+                  <option *ngFor="let category of categories" (click)="getproductAdvancedSearch(product)"[value]="category._id">  
+                  {{category.name}}
+                  </option>
+                </select>
+  </div>
+  <div class="field">
+
+    <label for="price-min">Price Min:</label>
+    <input type="number" name="priceMin" (keyup)="getproductAdvancedSearch(product)" id="price-min" min="10" max="500" [(ngModel)]="product.priceMin">
+
+    <label for="price-max">Price Max:</label>
+    <input type="number" name="priceMax" (keyup)="getproductAdvancedSearch(product)" id="price-max" min="10" max="500" [(ngModel)]="product.priceMax">
+  </div>
+
+  <button class="ui button" type="submit" (click)="getproductAdvancedSearch(product)">Submit</button>
+  <button class="ui button" type="submit" (click)="ngOnInit(); getproductAdvancedSearch(product)">Reset</button>
+</form>
+<!--  </div>
+  </div>-->
+<!--<div class="container ui clearing segment">
+      <product-catalog #c></product-catalog>
+    </div>-->
+<!--</div>
+-->
+<!--</div>-->

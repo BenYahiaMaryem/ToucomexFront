@@ -1,0 +1,42 @@
+<!--<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <label>Parse Rss products Feed</label>
+    <sui-accordion class="styled fluid">
+      <sui-accordion-panel>
+        <div title>
+
+        </div>
+
+        <div content>
+          <p>{{ product }}</p>
+        </div>
+      </sui-accordion-panel>
+    </sui-accordion>
+  </div>
+</div>-->
+<div class="ui three column stackable grid">
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column">
+    <div class="ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="false">
+      <div class="text" suiPopup popupHeader="Parse Rss Feed To Add all category's products'">Add Multiple products</div>
+      <i class="dropdown icon"></i>
+      <div class="ui tiny menu" suiDropdownMenu>
+        <product-generator *ngFor="let feed of productsFeed" class="item" [product]="feed" (parseproducts)="parseproducts($event)"></product-generator>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <product-form (insert)="addproduct($event)"></product-form>
+  </div>
+</div>
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <product-list *ngFor='let product of products' [product]='product' (delete)="deleteproduct(product)">
+    </product-list>
+  </div>
+</div>

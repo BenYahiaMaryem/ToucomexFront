@@ -1,0 +1,62 @@
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+<div class="ui raised very padded text container piled segments">
+  <div class="ui segment">
+    
+        <form class="ui form" #f="ngForm" novalidate>
+    <table class="ui compact celled definition table">
+        <thead class="full-width">
+          <tr>
+            <th></th>
+            <th>product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i = index; trackBy: trackproducts">
+            <td class="collapsing">
+              <div (click)="removeproductFromCart(i)">
+                <i class="trash outline icon"></i>
+              </div>
+            </td>
+            <td>{{product.name}}</td>
+            <td>
+             <select name="quantity" [(ngModel)]="product.TotalQty">
+                  <option  *ngFor="let nb of product.max" [value]="nb">  
+                  {{nb}}
+                  </option>
+                </select>
+            </td>
+            <td><input [value]="product.oldPrice" readonly [(ngModel)]="product.oldPrice" name="price"></td>
+            <td>{{product.TotalQty * product.oldPrice}}</td>
+            
+          
+          </tr>
+          
+        </tbody>
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="4">
+              
+              <div (click)="totalQ()" suiPopup popupHeader="click to view your cart's total" class="ui small  button">
+                Total Price
+              </div>
+              {{total}}
+              
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+         <button class="ui button" type="submit" *ngIf="auth.isAuthenticated()" (click)="passCommand()" [routerLink]='["../credit"]'>Pass To Order</button>
+         <button class="ui button" type="submit" *ngIf="!auth.isAuthenticated()" (click)="auth.loginWithGoogle(); getCommand()" >Pass To Order</button>
+         
+        </form>
+  </div>
+</div>
+<br><br><br><br><br>

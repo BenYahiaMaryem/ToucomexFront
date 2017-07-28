@@ -1,0 +1,29 @@
+<!--
+    <input type="text" placeholder="Search...">
+  <div class="inverted button">
+    <a class="item" routerLink='catalog'>
+      Search
+    </a>
+  </div>
+  -->
+<form #f="ngForm" novalidate>
+  <div class="ui category search" >
+    <div class="ui icon input" suiPopup popupHeader="rapid search">
+      <input type="text" class="prompt" name="attr" (blur)="getproductRapidSearch(product)" (keyup)="getproductRapidSearch(product)" (keyup.enter)="getproductRapidSearch(product)" [(ngModel)]=product.attr placeholder="Search...">
+      <i class="search icon" ></i>
+    </div>
+  </div>
+</form>
+
+<!--      <div class="field">
+        <input  placeholder="rapid-search">
+      </div>-->
+<!--    </div>
+-->
+<!-- <div class="ui button" tabindex="0">-->
+<!--button type="submit" (click)="save(f.value, f.valid,product)">Submit</button-->
+<!--     <button type="submit" >Submit</button>
+
+    </div>-->
+<!--    <product-catalog *ngFor='let product of products'></product-catalog>
+-->
